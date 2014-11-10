@@ -1,0 +1,25 @@
+//
+//  PrefixHeader.pch
+//  UICategories
+//
+//  Created by xiekw on 10/22/14.
+//  Copyright (c) 2014 xiekw. All rights reserved.
+//
+
+#ifndef UICategories_PrefixHeader_pch
+#define UICategories_PrefixHeader_pch
+
+#import "UICategory.h"
+
+#define NSLog(format, ...) do {                                                                          \
+fprintf(stderr, "<%s : %d> %s\n",                                           \
+[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],  \
+__LINE__, __func__);                                                        \
+(NSLog)((format), ##__VA_ARGS__);                                           \
+fprintf(stderr, "-------\n");                                               \
+} while (0)
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif
