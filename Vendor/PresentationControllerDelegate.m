@@ -30,14 +30,12 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
     DXPresentationExampleTransition *animator = [DXPresentationExampleTransition new];
-    animator.presenting = YES;
     return animator;
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
-    DXPresentationExampleTransition *animator = [DXPresentationExampleTransition new];
-    return animator;
+    return nil;
 }
 
 @end

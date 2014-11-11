@@ -14,7 +14,6 @@
 
 @property (nonatomic, strong) DXPhoto *photo;
 
-@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIImageView *imageView;
 
 @end

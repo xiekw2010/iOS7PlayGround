@@ -11,6 +11,7 @@
 #import "TransitionCollectionViewController.h"
 #import "NavigationControllerDelegate.h"
 #import "SimpleNavTransition.h"
+#import "SingeImageViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate>
 
@@ -35,7 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.funcs = @[@"Blur effects", @"CollectionView transitation", @"Motion effects"];
+    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"CollectionView"];
     
     NSLog(@"self.navigationViewController is %@ and delegate is %@", self.navigationController, self.navigationController.delegate);
 }
@@ -82,6 +83,10 @@
         
         TransitionCollectionViewController *tvc = [[TransitionCollectionViewController alloc] initWithCollectionViewLayout:allFlowLayout];
         [self.navigationController pushViewController:tvc animated:YES];
+    }else if (indexPath.row == 2) {
+        
+        SingeImageViewController *single = [SingeImageViewController new];
+        [self presentViewController:single animated:YES completion:nil];
     }
 }
 

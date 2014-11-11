@@ -36,6 +36,13 @@
     return images;
 }
 
++ (UIImage *)anyImage
+{
+    NSArray *imageURLs = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"jpg" subdirectory:@"Demo Images"];
+
+    NSURL *imageURL = imageURLs[arc4random()%imageURLs.count];
+    return [UIImage imageWithContentsOfFile:[imageURL path]];
+}
 
 
 @end

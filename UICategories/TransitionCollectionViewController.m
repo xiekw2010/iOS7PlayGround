@@ -52,7 +52,10 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
 {
-    return self.navInteractive.pctInteractive;
+    if (animationController == self.navInteractive) {
+        return self.navInteractive.pctInteractive;
+    }
+    return nil;
 }
 
 - (void)viewDidLoad {

@@ -51,4 +51,6 @@
 
 
 
+extern CGRect centerFrameWithContainerAndImageSize(CGSize containerSize, CGSize imageSize);
+
 

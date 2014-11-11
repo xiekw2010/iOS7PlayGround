@@ -304,3 +304,13 @@
 @end
 
 
+
+CGRect centerFrameWithContainerAndImageSize(CGSize containerSize, CGSize imageSize)
+{
+    CGSize bigImageSize = imageSize;
+    CGFloat imageWidth = MIN(containerSize.width, bigImageSize.width);
+    bigImageSize.height = imageWidth/bigImageSize.width*bigImageSize.height;
+    bigImageSize.width = imageWidth;
+    CGRect bigImageTargetFrame = CGRectMake((containerSize.width-bigImageSize.width)*0.5, (containerSize.height-bigImageSize.height)*0.5, bigImageSize.width, bigImageSize.height);
+    return bigImageTargetFrame;
+}

@@ -25,6 +25,9 @@
     self.navigationController.delegate = self;
     self.popTransitation = [DXNavPopPhotoTransition new];
     [self.popTransitation attachGesturePopToNavigationViewController:self];
+    
+    
+    //make some custom operation to the self.imageview
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -43,7 +46,10 @@
 
 - (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
 {
-    return self.popTransitation.pctInteractive;
+    if (animationController == self.popTransitation) {
+        return self.popTransitation.pctInteractive;
+    }
+    return nil;
 }
 
 - (void)viewDidLoad {
@@ -56,18 +62,6 @@
     
     if (self.presentingViewController) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(dismiss)];
-        self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-        self.scrollView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-        [self.view addSubview:self.scrollView];
-        
-        CGFloat igvWidth = CGRectGetWidth(self.view.bounds);
-        CGFloat igvHeight = self.photo.display.size.height/self.photo.display.size.width * igvWidth;
-        
-        self.imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, igvWidth, igvHeight)];
-        self.imageView.center = CGPointMake(self.scrollView.center.x, self.scrollView.center.y-64.0);
-        [self.scrollView addSubview:self.imageView];
-        
-        self.imageView.image = self.photo.display;
 
     }
     

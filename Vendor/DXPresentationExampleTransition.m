@@ -8,7 +8,59 @@
 
 #import "DXPresentationExampleTransition.h"
 
+@interface DXPresentationExampleTransition ()
+
+@property (nonatomic, strong) UIPanGestureRecognizer *panG;
+@property (nonatomic, weak) UIViewController *viewController;
+
+@end
+
 @implementation DXPresentationExampleTransition
+
+- (void)dealloc
+{
+    [self detachGestureDismiss];
+}
+
+- (void)attachGestureToDismissViewController:(UIViewController *)controller
+{
+    self.viewController = controller;
+    self.panG = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)];
+    [self.viewController.view addGestureRecognizer:self.panG];
+}
+
+- (void)detachGestureDismiss
+{
+    [self.viewController.view removeGestureRecognizer:self.panG];
+    self.panG = nil;
+    self.pctInteractive = nil;
+}
+
+- (void)handlePan:(UIPanGestureRecognizer *)recognizer
+{
+    UIView* view = self.viewController.view;
+    if (recognizer.state == UIGestureRecognizerStateBegan) {
+        CGPoint location = [recognizer locationInView:view];
+        if (location.y >  CGRectGetMidY(view.bounds)) {
+            self.pctInteractive = [UIPercentDrivenInteractiveTransition new];
+            [self.viewController dismissViewControllerAnimated:YES completion:nil];
+        }
+    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
+        CGPoint translation = [recognizer translationInView:view];
+        CGFloat d = fabs(translation.y / CGRectGetHeight(view.bounds));
+        [self.pctInteractive updateInteractiveTransition:d];
+    } else if (recognizer.state == UIGestureRecognizerStateEnded) {
+        CGFloat yVelocity = [recognizer velocityInView:view].y;
+        
+        if (yVelocity < 0) {
+            [self.pctInteractive finishInteractiveTransition];
+        } else {
+            [self.pctInteractive cancelInteractiveTransition];
+        }
+        self.pctInteractive = nil;
+    }
+}
+
 
 // duration of animation
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext
@@ -26,46 +78,30 @@
     UIView *containerView = [transitionContext containerView];
     
     
-    if (self.presenting) {
-        // Add the two VC views to the container. Hide the to
-        [containerView addSubview:toVC.view];
+    if (self.presentOperation == DXPresentationOperationPresent) {
         [containerView addSubview:fromVC.view];
-        
+        [containerView addSubview:toVC.view];
         
         //make some animation here
-        
-        fromVC.view.backgroundColor = [UIColor redColor];
-        
+        toVC.view.alpha = 0.0;
+        toVC.view.transform = CGAffineTransformMakeTranslation(0, -CGRectGetHeight(toVC.view.bounds));
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-            
-            fromVC.view.backgroundColor = [UIColor redColor];
-            fromVC.view.alpha = 0.0;
-            
+            toVC.view.alpha = 1.0;
+            toVC.view.transform = CGAffineTransformMakeTranslation(0, 0);
         } completion:^(BOOL finished) {
-            
-            [fromVC.view removeFromSuperview];
-            
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
     }else {
         [containerView addSubview:toVC.view];
         [containerView addSubview:fromVC.view];
-
         
         //make some animation here
-        
-        fromVC.view.backgroundColor = [UIColor redColor];
-        
         [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
-            
-            fromVC.view.backgroundColor = [UIColor blueColor];
-            
+            fromVC.view.transform = CGAffineTransformMakeTranslation(0, -CGRectGetHeight(fromVC.view.bounds));
+            fromVC.view.alpha = 0.1;
         } completion:^(BOOL finished) {
-            [fromVC.view removeFromSuperview];
-
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
-        
     }
 }
 

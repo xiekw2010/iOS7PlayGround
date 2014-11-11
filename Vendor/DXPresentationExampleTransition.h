@@ -8,8 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, DXPresentationOperation) {
+    DXPresentationOperationPresent,
+    DXPresentationOperationDimiss,
+};
+
 @interface DXPresentationExampleTransition : NSObject<UIViewControllerAnimatedTransitioning>
 
-@property (nonatomic, assign) BOOL presenting;
+@property (nonatomic, assign) DXPresentationOperation presentOperation;
+@property (nonatomic, strong) UIPercentDrivenInteractiveTransition *pctInteractive;
+
+- (void)attachGestureToDismissViewController:(UIViewController *)controller;
+- (void)detachGestureDismiss;
 
 @end

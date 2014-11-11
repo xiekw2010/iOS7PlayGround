@@ -29,6 +29,7 @@
 
 @implementation DXNavPopPhotoTransition
 
+
 - (void)dealloc
 {
     [self detachGesturePop];
@@ -77,7 +78,7 @@
     UIViewController *nav = (UIViewController *)self.nav;
     UINavigationController *navNav = nav.navigationController;
     NSUInteger currentIndex = [navNav.viewControllers indexOfObject:nav];
-    if (currentIndex > 1) {
+    if (currentIndex > 1 && currentIndex != NSNotFound) {
         _fromNav = navNav.viewControllers[currentIndex-1];
     }
 
@@ -96,7 +97,7 @@
     CGAffineTransform currentTransform = view.transform;
     CGAffineTransform newTransform = CGAffineTransformScale(currentTransform, scale, scale);
     CGFloat const target = 0.99;
-    CGFloat targetViewAlphaDelta = 1.5 - recognizer.scale;
+    CGFloat targetViewAlphaDelta = 1.2 - recognizer.scale;
     
     if (recognizer.state == UIGestureRecognizerStateChanged) {
         _fromNav.collectionView.alpha = targetViewAlphaDelta;
@@ -113,11 +114,6 @@
             }];
             [self.pctInteractive finishInteractiveTransition];
         } else {
-            [UIView animateWithDuration:0.25 animations:^{
-                view.frame = _fakeImageViewOriginFrame;
-            } completion:^(BOOL finished) {
-            }];
-            
             [self.pctInteractive cancelInteractiveTransition];
         }
         self.pctInteractive = nil;
@@ -164,7 +160,6 @@
                                              recognizer.view.center.y + translation.y);
         
         [recognizer setTranslation:CGPointMake(0, 0) inView:view];
-
     }
 }
 
@@ -198,13 +193,13 @@
     _selectCellFrame = thumbnailCellFrame;
     
     UIImageView *fakeImageView = pfromVC.imageView;
-    
-    _fakeImageViewOriginFrame = fakeImageView.frame;
-    NSLog(@"fakeImageViewOriginFrame is %@", NSStringFromCGRect(_fakeImageViewOriginFrame));
-    
-    
     [toVC.view addSubview:fakeImageView];
+
+    // fake image should be the big image size into the container view
     
+    
+    _fakeImageViewOriginFrame = centerFrameWithContainerAndImageSize(containerView.bounds.size, pToVC.bigImage.size);
+    NSLog(@"fakeImageViewOriginFrame is %@", NSStringFromCGRect(_fakeImageViewOriginFrame));
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         
@@ -219,6 +214,13 @@
             [pToVC.collectionView addSubview:pToVC.selectCell];
         }else {
             [fromVC.view addSubview:fakeImageView];
+            [UIView animateWithDuration:0.25 animations:^{
+                fakeImageView.transform = CGAffineTransformMakeRotation(0);
+                fakeImageView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+                fakeImageView.frame = _fakeImageViewOriginFrame;
+            } completion:^(BOOL finished) {
+            }];
+
             [pToVC.selectCell removeFromSuperview];
         }
         [transitionContext completeTransition:!transitationCancelled];

@@ -12,6 +12,7 @@
 		BE5B4C3F19F917D400EAE601 /* DXNavPopPhotoTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5B4C3E19F917D400EAE601 /* DXNavPopPhotoTransition.m */; };
 		BE6F959419F8A1410068EEB7 /* Demo Images in Resources */ = {isa = PBXBuildFile; fileRef = BE6F959319F8A1410068EEB7 /* Demo Images */; };
 		BE6F959719F8BA520068EEB7 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6F959619F8BA520068EEB7 /* NavigationControllerDelegate.m */; };
+		BE932BCB1A119EA00057B298 /* SingeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932BCA1A119EA00057B298 /* SingeImageViewController.m */; };
 		BEB33FB219F66B380016605B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FB119F66B380016605B /* main.m */; };
 		BEB33FB519F66B380016605B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FB419F66B380016605B /* AppDelegate.m */; };
 		BEB33FB819F66B380016605B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FB719F66B380016605B /* ViewController.m */; };
@@ -52,6 +53,8 @@
 		BE6F959319F8A1410068EEB7 /* Demo Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Demo Images"; sourceTree = "<group>"; };
 		BE6F959519F8BA520068EEB7 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
 		BE6F959619F8BA520068EEB7 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
+		BE932BC91A119EA00057B298 /* SingeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingeImageViewController.h; sourceTree = "<group>"; };
+		BE932BCA1A119EA00057B298 /* SingeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingeImageViewController.m; sourceTree = "<group>"; };
 		BEB33FAC19F66B380016605B /* UICategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB33FB019F66B380016605B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB33FB119F66B380016605B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				BEB3402219F79E580016605B /* PhotoDetailViewController.m */,
 				BEB33FB619F66B380016605B /* ViewController.h */,
 				BEB33FB719F66B380016605B /* ViewController.m */,
+				BE932BC91A119EA00057B298 /* SingeImageViewController.h */,
+				BE932BCA1A119EA00057B298 /* SingeImageViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				BE5B4C3F19F917D400EAE601 /* DXNavPopPhotoTransition.m in Sources */,
 				BEB3401C19F794DF0016605B /* DXPhoto.m in Sources */,
 				BEB33FB219F66B380016605B /* main.m in Sources */,
+				BE932BCB1A119EA00057B298 /* SingeImageViewController.m in Sources */,
 				BEB3401319F768240016605B /* TransitionCollectionViewController.m in Sources */,
 				BE5B4C3719F8FB1A00EAE601 /* DXNavPushPhotoTransition.m in Sources */,
 			);

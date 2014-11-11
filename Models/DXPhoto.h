@@ -15,5 +15,6 @@
 
 
 + (NSArray *)photos;
++ (UIImage *)anyImage;
 
 @end

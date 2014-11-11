@@ -46,21 +46,19 @@
     
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:100 initialSpringVelocity:25 options:0 animations:^{
+        
         fromVC.view.alpha = 0.0;
         CGRect toVCViewFrame = toVC.view.frame;
         CGSize bigImageSize = pfromVC.bigImage.size;
-        CGFloat imageWidth = MIN(CGRectGetWidth(toVCViewFrame), bigImageSize.width);
-        bigImageSize.height = imageWidth/bigImageSize.width*bigImageSize.height;
-        bigImageSize.width = imageWidth;
-        CGRect bigImageTargetFrame = CGRectMake((CGRectGetWidth(toVCViewFrame)-bigImageSize.width)*0.5, (CGRectGetHeight(toVCViewFrame)-bigImageSize.height)*0.5, bigImageSize.width, bigImageSize.height);
-        pToVC.imageView.frame = bigImageTargetFrame;
+        pToVC.imageView.frame = centerFrameWithContainerAndImageSize(toVCViewFrame.size, bigImageSize);
+        
     } completion:^(BOOL finished) {
+        
         fromVC.view.alpha = 1.0;
         [fromVC.view removeFromSuperview];
         
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
 }
-
 
 @end
