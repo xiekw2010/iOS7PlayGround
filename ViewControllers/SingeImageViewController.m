@@ -40,23 +40,6 @@
     [self.presentTransitation detachGestureDismiss];
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    self.imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    self.imageView.userInteractionEnabled = YES;
-    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    self.imageView.layer.masksToBounds = YES;
-    [self.view addSubview:self.imageView];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
-    [self.imageView addGestureRecognizer:tap];
-    self.imageView.image = [DXPhoto anyImage];
-    
-    self.transitioningDelegate = self;
-    self.presentTransitation = [DXPresentationExampleTransition new];
-}
-
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
@@ -73,6 +56,24 @@
 - (id<UIViewControllerInteractiveTransitioning>)interactionControllerForDismissal:(id<UIViewControllerAnimatedTransitioning>)animator
 {
     return self.presentTransitation.pctInteractive;
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    self.imageView.userInteractionEnabled = YES;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.imageView.layer.masksToBounds = YES;
+    [self.view addSubview:self.imageView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap)];
+    [self.imageView addGestureRecognizer:tap];
+    self.imageView.image = [DXPhoto anyImage];
+    
+    self.transitioningDelegate = self;
+    self.presentTransitation = [DXPresentationExampleTransition new];
 }
 
 - (void)handleTap

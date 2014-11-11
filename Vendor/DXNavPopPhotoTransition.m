@@ -11,6 +11,11 @@
 #import "ThumbnailCollectionViewCell.h"
 #import "TransitionCollectionViewController.h"
 
+static CGPoint centerOfFrame(CGRect frame)
+{
+    return CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
+}
+
 @interface DXNavPopPhotoTransition ()<UIGestureRecognizerDelegate>
 {
     CGFloat _lastScale;
@@ -164,6 +169,9 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (gestureRecognizer==self.pinchG && otherGestureRecognizer==self.panG) {
+        return NO;
+    };
     return YES;
 }
 
@@ -227,10 +235,7 @@
     }];
 }
 
-CGPoint centerOfFrame(CGRect frame)
-{
-    return CGPointMake(CGRectGetMidX(frame), CGRectGetMidY(frame));
-}
+
 
 
 

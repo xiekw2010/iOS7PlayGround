@@ -13,6 +13,7 @@
 		BE6F959419F8A1410068EEB7 /* Demo Images in Resources */ = {isa = PBXBuildFile; fileRef = BE6F959319F8A1410068EEB7 /* Demo Images */; };
 		BE6F959719F8BA520068EEB7 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6F959619F8BA520068EEB7 /* NavigationControllerDelegate.m */; };
 		BE932BCB1A119EA00057B298 /* SingeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932BCA1A119EA00057B298 /* SingeImageViewController.m */; };
+		BE932BCE1A11C4470057B298 /* ContainerExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932BCD1A11C4470057B298 /* ContainerExampleViewController.m */; };
 		BEB33FB219F66B380016605B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FB119F66B380016605B /* main.m */; };
 		BEB33FB519F66B380016605B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FB419F66B380016605B /* AppDelegate.m */; };
 		BEB33FB819F66B380016605B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FB719F66B380016605B /* ViewController.m */; };
@@ -55,6 +56,8 @@
 		BE6F959619F8BA520068EEB7 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
 		BE932BC91A119EA00057B298 /* SingeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingeImageViewController.h; sourceTree = "<group>"; };
 		BE932BCA1A119EA00057B298 /* SingeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingeImageViewController.m; sourceTree = "<group>"; };
+		BE932BCC1A11C4470057B298 /* ContainerExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerExampleViewController.h; sourceTree = "<group>"; };
+		BE932BCD1A11C4470057B298 /* ContainerExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerExampleViewController.m; sourceTree = "<group>"; };
 		BEB33FAC19F66B380016605B /* UICategories.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICategories.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEB33FB019F66B380016605B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEB33FB119F66B380016605B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				BEB33FB719F66B380016605B /* ViewController.m */,
 				BE932BC91A119EA00057B298 /* SingeImageViewController.h */,
 				BE932BCA1A119EA00057B298 /* SingeImageViewController.m */,
+				BE932BCC1A11C4470057B298 /* ContainerExampleViewController.h */,
+				BE932BCD1A11C4470057B298 /* ContainerExampleViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				BEB33FB519F66B380016605B /* AppDelegate.m in Sources */,
 				BEB3402019F798800016605B /* ThumbnailCollectionViewCell.m in Sources */,
 				BECCB87219FDEE6700C6948C /* PresentationControllerDelegate.m in Sources */,
+				BE932BCE1A11C4470057B298 /* ContainerExampleViewController.m in Sources */,
 				BEB3402619F7A1750016605B /* SimpleNavTransition.m in Sources */,
 				BEB3402319F79E580016605B /* PhotoDetailViewController.m in Sources */,
 				BEB33FD819F66DBC0016605B /* BlurEffectViewController.m in Sources */,

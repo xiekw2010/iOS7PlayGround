@@ -8,17 +8,48 @@
 
 #import "BlurEffectViewController.h"
 #import "DXPhoto.h"
+#import "SimpleNavTransition.h"
 
-@interface BlurEffectViewController ()
+@interface BlurEffectViewController ()<UINavigationControllerDelegate>
 {
     UIImage *_blurImage;
 }
 
 @property (nonatomic, strong) NSArray *images;
+@property (nonatomic, strong) SimpleNavTransition *simpleTransition;
 
 @end
 
 @implementation BlurEffectViewController
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.navigationController.delegate = self;
+    
+    [self.simpleTransition attachGesturePopToNavigationViewController:self.navigationController];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.simpleTransition detachGesturePop];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    self.simpleTransition.navOp = operation;
+    return self.simpleTransition;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
+{
+    if (animationController == self.simpleTransition) {
+        return self.simpleTransition.pctInteractive;
+    }
+    return nil;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,6 +68,7 @@
     
     NSLog(@"self.navigationViewController is %@ and delegate is %@", self.navigationController, self.navigationController.delegate);
 
+    self.simpleTransition = [[SimpleNavTransition alloc] initWithNavigationOperation:UINavigationControllerOperationNone];
 }
 
 - (void)back

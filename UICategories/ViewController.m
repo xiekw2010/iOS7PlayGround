@@ -12,6 +12,7 @@
 #import "NavigationControllerDelegate.h"
 #import "SimpleNavTransition.h"
 #import "SingeImageViewController.h"
+#import "ContainerExampleViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate>
 
@@ -36,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"CollectionView"];
+    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"ContainerViewController"];
     
     NSLog(@"self.navigationViewController is %@ and delegate is %@", self.navigationController, self.navigationController.delegate);
 }
@@ -87,6 +88,8 @@
         
         SingeImageViewController *single = [SingeImageViewController new];
         [self presentViewController:single animated:YES completion:nil];
+    }else if (indexPath.row == 3) {
+        [ContainerExampleViewController showFromParent:self];
     }
 }
 

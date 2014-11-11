@@ -45,7 +45,7 @@
     [thumbnailCell removeFromSuperview];
     
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:100 initialSpringVelocity:25 options:0 animations:^{
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:25 options:0 animations:^{
         
         fromVC.view.alpha = 0.0;
         CGRect toVCViewFrame = toVC.view.frame;
