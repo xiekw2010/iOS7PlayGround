@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DXPhoto.h"
+#import <FLEX/FLEXManager.h>
 
 @interface AppDelegate ()
 
@@ -24,6 +25,8 @@
     });
     
     self.window.tintColor = [UIColor redColor];
+    
+    [[FLEXManager sharedManager] showExplorer];
     return YES;
 }
 

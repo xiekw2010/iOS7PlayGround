@@ -29,6 +29,32 @@
 
 @end
 
+@implementation UIView (MotionEffect)
+
+- (void)centerX_addMotionEffectWithMin:(CGFloat)min max:(CGFloat)max
+{
+    if (![self respondsToSelector:@selector(addMotionEffect:)]) {
+        return;
+    }
+    UIInterpolatingMotionEffect *effectX = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.x" type: UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+    effectX.minimumRelativeValue = @(min);
+    effectX.maximumRelativeValue = @(max);
+    [self addMotionEffect:effectX];
+}
+
+- (void)centerY_addMotionEffectWithMin:(CGFloat)min max:(CGFloat)max
+{
+    if (![self respondsToSelector:@selector(addMotionEffect:)]) {
+        return;
+    }
+    UIInterpolatingMotionEffect *effectY = [[UIInterpolatingMotionEffect alloc] initWithKeyPath:@"center.y" type: UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+    effectY.minimumRelativeValue = @(min);
+    effectY.maximumRelativeValue = @(max);
+    [self addMotionEffect:effectY];
+}
+
+@end
+
 @implementation UIImage (ImageEffects)
 
 - (UIImage *)applyLightEffect
@@ -53,7 +79,7 @@
 {
     const CGFloat EffectColorAlpha = 0.6;
     UIColor *effectColor = tintColor;
-    int componentCount = CGColorGetNumberOfComponents(tintColor.CGColor);
+    size_t componentCount = CGColorGetNumberOfComponents(tintColor.CGColor);
     if (componentCount == 2) {
         CGFloat b;
         if ([tintColor getWhite:&b alpha:NULL]) {
@@ -125,7 +151,7 @@
             // ... if d is odd, use three box-blurs of size 'd', centered on the output pixel.
             //
             CGFloat inputRadius = blurRadius * [[UIScreen mainScreen] scale];
-            NSUInteger radius = floor(inputRadius * 3. * sqrt(2 * M_PI) / 4 + 0.5);
+            uint32_t radius = floor(inputRadius * 3. * sqrt(2 * M_PI) / 4 + 0.5);
             if (radius % 2 != 1) {
                 radius += 1; // force radius to be odd so that the three box-blur methodology works.
             }
@@ -230,7 +256,7 @@
     }
     
     resultImage = UIGraphicsGetImageFromCurrentImageContext();
-
+    
     return resultImage;
 }
 
@@ -313,4 +339,10 @@ CGRect centerFrameWithContainerAndImageSize(CGSize containerSize, CGSize imageSi
     bigImageSize.width = imageWidth;
     CGRect bigImageTargetFrame = CGRectMake((containerSize.width-bigImageSize.width)*0.5, (containerSize.height-bigImageSize.height)*0.5, bigImageSize.width, bigImageSize.height);
     return bigImageTargetFrame;
+}
+
+CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high)
+{
+    CGFloat diff = high - low;
+    return (((CGFloat) rand() / RAND_MAX) * diff) + low;
 }

@@ -13,6 +13,8 @@
 #import "SimpleNavTransition.h"
 #import "SingeImageViewController.h"
 #import "ContainerExampleViewController.h"
+#import "MotionEffectViewController.h"
+#import "PopoverDisplayViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate>
 
@@ -37,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"ContainerViewController"];
+    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"ContainerViewController", @"Motion Effect", @"PopOver"];
     
     NSLog(@"self.navigationViewController is %@ and delegate is %@", self.navigationController, self.navigationController.delegate);
 }
@@ -90,6 +92,10 @@
         [self presentViewController:single animated:YES completion:nil];
     }else if (indexPath.row == 3) {
         [ContainerExampleViewController showFromParent:self];
+    }else if (indexPath.row == 4) {
+        [self.navigationController pushViewController:[MotionEffectViewController new] animated:YES];
+    }else if (indexPath.row == 5) {
+        [self.navigationController pushViewController:[PopoverDisplayViewController new] animated:YES];
     }
 }
 
