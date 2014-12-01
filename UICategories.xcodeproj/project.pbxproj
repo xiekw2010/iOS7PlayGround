@@ -37,6 +37,9 @@
 		BEB3402619F7A1750016605B /* SimpleNavTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB3402519F7A1750016605B /* SimpleNavTransition.m */; };
 		BECCB87219FDEE6700C6948C /* PresentationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCB87119FDEE6700C6948C /* PresentationControllerDelegate.m */; };
 		BECCB87519FDEF5F00C6948C /* DXPresentationExampleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCB87419FDEF5F00C6948C /* DXPresentationExampleTransition.m */; };
+		BEF7A1CE1A2BF7A800CF8A0B /* PathPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF7A1CD1A2BF7A800CF8A0B /* PathPresentationViewController.m */; };
+		BEF7A1D11A2BFA2A00CF8A0B /* PathSheetTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF7A1D01A2BFA2A00CF8A0B /* PathSheetTransition.m */; };
+		BEF7A1D31A2C03F200CF8A0B /* FBPop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF7A1D21A2C03F200CF8A0B /* FBPop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,11 @@
 		BECCB87119FDEE6700C6948C /* PresentationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationControllerDelegate.m; sourceTree = "<group>"; };
 		BECCB87319FDEF5F00C6948C /* DXPresentationExampleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPresentationExampleTransition.h; sourceTree = "<group>"; };
 		BECCB87419FDEF5F00C6948C /* DXPresentationExampleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPresentationExampleTransition.m; sourceTree = "<group>"; };
+		BEF7A1CC1A2BF7A800CF8A0B /* PathPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathPresentationViewController.h; sourceTree = "<group>"; };
+		BEF7A1CD1A2BF7A800CF8A0B /* PathPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathPresentationViewController.m; sourceTree = "<group>"; };
+		BEF7A1CF1A2BFA2A00CF8A0B /* PathSheetTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PathSheetTransition.h; sourceTree = "<group>"; };
+		BEF7A1D01A2BFA2A00CF8A0B /* PathSheetTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PathSheetTransition.m; sourceTree = "<group>"; };
+		BEF7A1D21A2C03F200CF8A0B /* FBPop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBPop.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 			files = (
 				BEB33FE619F756C60016605B /* Accelerate.framework in Frameworks */,
 				BE902F5C1A1DE2AC00BE3767 /* FLEX.framework in Frameworks */,
+				BEF7A1D31A2C03F200CF8A0B /* FBPop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +223,8 @@
 				BE3F6E301A15ACCC0011327D /* DXPopover.m */,
 				BE3F6E321A15F85C0011327D /* CGPlayView.h */,
 				BE3F6E331A15F85C0011327D /* CGPlayView.m */,
+				BEF7A1CF1A2BFA2A00CF8A0B /* PathSheetTransition.h */,
+				BEF7A1D01A2BFA2A00CF8A0B /* PathSheetTransition.m */,
 			);
 			path = Vendor;
 			sourceTree = "<group>";
@@ -238,6 +249,8 @@
 				BE3F6E2A1A14BDCB0011327D /* MotionEffectViewController.m */,
 				BE3F6E2C1A15A2150011327D /* PopoverDisplayViewController.h */,
 				BE3F6E2D1A15A2150011327D /* PopoverDisplayViewController.m */,
+				BEF7A1CC1A2BF7A800CF8A0B /* PathPresentationViewController.h */,
+				BEF7A1CD1A2BF7A800CF8A0B /* PathPresentationViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -245,6 +258,7 @@
 		BEB3401819F794A50016605B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BEF7A1D21A2C03F200CF8A0B /* FBPop.framework */,
 				BE902F5B1A1DE2AC00BE3767 /* FLEX.framework */,
 				BEB33FE519F756C60016605B /* Accelerate.framework */,
 			);
@@ -382,7 +396,9 @@
 				BE932BCE1A11C4470057B298 /* ContainerExampleViewController.m in Sources */,
 				BE3F6E341A15F85C0011327D /* CGPlayView.m in Sources */,
 				BE3F6E2E1A15A2150011327D /* PopoverDisplayViewController.m in Sources */,
+				BEF7A1D11A2BFA2A00CF8A0B /* PathSheetTransition.m in Sources */,
 				BEB3402619F7A1750016605B /* SimpleNavTransition.m in Sources */,
+				BEF7A1CE1A2BF7A800CF8A0B /* PathPresentationViewController.m in Sources */,
 				BEB3402319F79E580016605B /* PhotoDetailViewController.m in Sources */,
 				BEB33FD819F66DBC0016605B /* BlurEffectViewController.m in Sources */,
 				BE6F959719F8BA520068EEB7 /* NavigationControllerDelegate.m in Sources */,
@@ -525,6 +541,7 @@
 				INFOPLIST_FILE = UICategories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -541,6 +558,7 @@
 				INFOPLIST_FILE = UICategories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
