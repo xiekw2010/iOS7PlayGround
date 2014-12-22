@@ -206,7 +206,7 @@ static CGPoint centerOfFrame(CGRect frame)
     // fake image should be the big image size into the container view
     
     
-    _fakeImageViewOriginFrame = centerFrameWithContainerAndImageSize(containerView.bounds.size, pToVC.bigImage.size);
+    _fakeImageViewOriginFrame = CenterFrameWithContainerAndContentSize(containerView.bounds.size, pToVC.bigImage.size);
     NSLog(@"fakeImageViewOriginFrame is %@", NSStringFromCGRect(_fakeImageViewOriginFrame));
     
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{

@@ -20,7 +20,8 @@
 
 
     UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    imageV.contentMode = UIViewContentModeScaleAspectFill;
+//    imageV.contentMode = UIViewContentModeScaleAspectFill;
+    imageV.userInteractionEnabled = YES;
     imageV.center = self.view.center;
     [self.view addSubview:imageV];
     imageV.image = [DXPhoto anyImage];

@@ -76,9 +76,9 @@
     UIView *titleView = self.navigationItem.titleView;
     CGPoint startPoint = CGPointMake(CGRectGetMidX(titleView.frame), CGRectGetMaxY(titleView.frame) + 20);
 
-    [self.popover showAtPoint:startPoint arrowDirection:DXPopoverPositionDown withContentView:self.tableView inView:self.navigationController.view];
+    [self.popover showAtPoint:startPoint popoverPostion:DXPopoverPositionDown withContentView:self.tableView inView:self.navigationController.view];
     __weak typeof(self)weakSelf = self;
-    self.popover.didDimissHandler = ^{
+    self.popover.didDismissHandler = ^{
         [weakSelf bounceTargetView:titleView];
     };
 }
@@ -88,10 +88,10 @@
     [self updateTableViewFrame];
 
     CGPoint startPoint = CGPointMake(CGRectGetMidX(self.btn.frame), CGRectGetMaxY(self.btn.frame) + 5);
-    [self.popover showAtPoint:startPoint arrowDirection:DXPopoverPositionDown withContentView:self.tableView inView:self.navigationController.view];
+    [self.popover showAtPoint:startPoint popoverPostion:DXPopoverPositionDown withContentView:self.tableView inView:self.navigationController.view];
     
     __weak typeof(self)weakSelf = self;
-    self.popover.didDimissHandler = ^{
+    self.popover.didDismissHandler = ^{
         [weakSelf bounceTargetView:weakSelf.btn];
     };
 }
@@ -101,10 +101,10 @@
     [self updateTableViewFrame];
 
     CGPoint startPoint = CGPointMake(CGRectGetMidX(self.downBtn.frame)+ 30, CGRectGetMinY(self.downBtn.frame) - 5);
-    [self.popover showAtPoint:startPoint arrowDirection:DXPopoverPositionUp withContentView:self.tableView inView:self.navigationController.view];
+    [self.popover showAtPoint:startPoint popoverPostion:DXPopoverPositionUp withContentView:self.tableView inView:self.navigationController.view];
     
     __weak typeof(self)weakSelf = self;
-    self.popover.didDimissHandler = ^{
+    self.popover.didDismissHandler = ^{
         [weakSelf bounceTargetView:weakSelf.downBtn];
     };
 }
@@ -147,15 +147,15 @@ static int i =1;
         i++;
     }else if (indexPath.row ==1) {
         CGSize arrowSize= self.popover.arrowSize;
-        arrowSize.width += randomFloatBetweenLowAndHigh(0.0, 5.0);
-        arrowSize.height += randomFloatBetweenLowAndHigh(0.0, 5.0);
+        arrowSize.width += RandomFloatBetweenLowAndHigh(0.0, 5.0);
+        arrowSize.height += RandomFloatBetweenLowAndHigh(0.0, 5.0);
         self.popover.arrowSize = arrowSize;
     }else if (indexPath.row == 2) {
-        self.popover.cornerRadius += randomFloatBetweenLowAndHigh(0.0, 1.0);
+        self.popover.cornerRadius += RandomFloatBetweenLowAndHigh(0.0, 1.0);
     }else if (indexPath.row == 3) {
-        self.popover.animationIn = randomFloatBetweenLowAndHigh(0.4, 2.0);
+        self.popover.animationIn = RandomFloatBetweenLowAndHigh(0.4, 2.0);
     }else if (indexPath.row == 4) {
-        self.popover.animationOut = randomFloatBetweenLowAndHigh(0.4, 2.0);
+        self.popover.animationOut = RandomFloatBetweenLowAndHigh(0.4, 2.0);
     }else if (indexPath.row == 5) {
         self.popover.animationSpring = !self.popover.animationSpring;
     }

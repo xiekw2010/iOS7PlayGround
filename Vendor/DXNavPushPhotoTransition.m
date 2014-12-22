@@ -50,7 +50,7 @@
         fromVC.view.alpha = 0.0;
         CGRect toVCViewFrame = toVC.view.frame;
         CGSize bigImageSize = pfromVC.bigImage.size;
-        pToVC.imageView.frame = centerFrameWithContainerAndImageSize(toVCViewFrame.size, bigImageSize);
+        pToVC.imageView.frame = CenterFrameWithContainerAndContentSize(toVCViewFrame.size, bigImageSize);
         
     } completion:^(BOOL finished) {
         

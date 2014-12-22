@@ -8,37 +8,47 @@
 
 #import "DXPhoto.h"
 
+static NSString * const FastImagesDirectory = @"FastDemoImages";
+static NSString * const InstagramImageDirectory = @"instagramImages";
+
 @implementation DXPhoto
 
 + (NSArray *)photos {
-    static NSArray *images = nil;
+    static NSMutableArray *images = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        images = [NSMutableArray array];
+        NSMutableArray *allImageURLS = [NSMutableArray array];
         
-        NSArray *imageURLs = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"jpg" subdirectory:@"instagramImages"];
+        NSArray *imageURLs = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"jpg" subdirectory:InstagramImageDirectory];
+        NSArray *imageURLs1 = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"JPG" subdirectory:InstagramImageDirectory];
+        NSArray *imageURLs2 = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"PNG" subdirectory:InstagramImageDirectory];
+        
+        [allImageURLS addObjectsFromArray:imageURLs];
+        [allImageURLS addObjectsFromArray:imageURLs1];
+        [allImageURLS addObjectsFromArray:imageURLs2];
+
+        
         CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
         NSLog(@"** Generating thumbnails...");
-
-        if (imageURLs.count) {
-            NSMutableArray *photos = [NSMutableArray array];
-            for (NSURL *imageURL  in imageURLs) {
+        if (allImageURLS.count) {
+            for (NSURL *imageURL  in allImageURLS) {
                 UIImage *originImage = [UIImage imageWithContentsOfFile:[imageURL path]];
                 DXPhoto *photo = [DXPhoto new];
                 photo.thumbnail = [originImage thumbnailForSize:CGSizeMake(100, 100)];
                 photo.display = [originImage thumbnailForScale:0.5];
-                [photos addObject:photo];
+                [images addObject:photo];
             }
-            images = [NSArray arrayWithArray:photos];
         }
+        
         NSLog(@"** Generated thumbnails in %g seconds", CFAbsoluteTimeGetCurrent() - startTime);
-
     });
     return images;
 }
 
 + (UIImage *)anyImage
 {
-    NSArray *imageURLs = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"jpg" subdirectory:@"Demo Images"];
+    NSArray *imageURLs = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"jpg" subdirectory:FastImagesDirectory];
 
     NSURL *imageURL = imageURLs[arc4random()%imageURLs.count];
     return [UIImage imageWithContentsOfFile:[imageURL path]];

@@ -301,6 +301,7 @@
     if ([pixelData length] > 0) {
         const UInt8 *pixelBytes = [pixelData bytes];
         
+        
         // Whether or not the image format is opaque, the first byte is always the alpha component, followed by RGB.
         UInt8 pixelR = pixelBytes[1];
         UInt8 pixelG = pixelBytes[2];
@@ -313,6 +314,29 @@
     }
     
     return imageIsLight;
+}
+
+- (CGFloat)colorness
+{
+    CGImageRef imageRef = [self CGImage];
+    CGDataProviderRef dataProviderRef = CGImageGetDataProvider(imageRef);
+    NSData *pixelData = (__bridge_transfer NSData *)CGDataProviderCopyData(dataProviderRef);
+    
+    if ([pixelData length] > 0) {
+        const UInt8 *pixelBytes = [pixelData bytes];
+        
+        
+        // Whether or not the image format is opaque, the first byte is always the alpha component, followed by RGB.
+        UInt8 pixelR = pixelBytes[1];
+        UInt8 pixelG = pixelBytes[2];
+        UInt8 pixelB = pixelBytes[3];
+        
+        // Calculate the perceived luminance of the pixel; the human eye favors green, followed by red, then blue.
+        double percievedLuminance = pixelR + pixelG + pixelB;
+        
+        return percievedLuminance;
+    }
+    return 0.0;
 }
 
 @end
@@ -329,9 +353,52 @@
 
 @end
 
+@interface EnablePopGNavigationViewController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
+
+@end
+
+@implementation EnablePopGNavigationViewController
+
+#pragma mark - UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        navigationController.interactivePopGestureRecognizer.enabled = (navigationController.viewControllers.count >= 2);
+    }
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    //return  YES;
+    return NO;
+}
 
 
-CGRect centerFrameWithContainerAndImageSize(CGSize containerSize, CGSize imageSize)
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated  {
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.interactivePopGestureRecognizer.enabled = NO;
+    }
+    
+    [super pushViewController:viewController animated:animated];
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    
+    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.delegate = self;
+        self.interactivePopGestureRecognizer.delegate = self;
+    }
+}
+
+@end
+
+
+CGRect CenterFrameWithContainerAndContentSize(CGSize containerSize, CGSize imageSize)
 {
     CGSize bigImageSize = imageSize;
     CGFloat imageWidth = MIN(containerSize.width, bigImageSize.width);
@@ -341,7 +408,7 @@ CGRect centerFrameWithContainerAndImageSize(CGSize containerSize, CGSize imageSi
     return bigImageTargetFrame;
 }
 
-CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high)
+CGFloat RandomFloatBetweenLowAndHigh(CGFloat low, CGFloat high)
 {
     CGFloat diff = high - low;
     return (((CGFloat) rand() / RAND_MAX) * diff) + low;

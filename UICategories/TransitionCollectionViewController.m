@@ -104,6 +104,7 @@ static NSString * const reuseIdentifier = @"Cell";
     ThumbnailCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     DXPhoto *photo = [DXPhoto photos][indexPath.row];
     cell.imageView.image = photo.thumbnail;
+    NSLog(@"photo's colorness is %f", [photo.thumbnail colorness]);
     return cell;
 }
 

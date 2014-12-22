@@ -62,6 +62,7 @@ layer.position = CGPointMake(layer.position.x+(nowAnchorPoint.x-DX_lastAnchor.x)
 
 //maybe for you to judge status bar style, if YES the statusbar style should be default, otherwise it should be UIStatusBarStyleLightContent.
 - (BOOL)isLight;
+- (CGFloat)colorness;
 
 @end
 
@@ -73,6 +74,15 @@ layer.position = CGPointMake(layer.position.x+(nowAnchorPoint.x-DX_lastAnchor.x)
 @end
 
 
-extern CGRect centerFrameWithContainerAndImageSize(CGSize containerSize, CGSize imageSize);
-extern CGFloat randomFloatBetweenLowAndHigh(CGFloat low, CGFloat high);
+/**
+ *  If the navigationViewController back button is customlized, the popG is disabled, if manually set the delegate, comes several bugs, here is the solution for it, just use it instead of UINavigationController
+ */
+@interface EnablePopGNavigationViewController : UINavigationController
+
+@end
+
+
+extern CGRect CenterFrameWithContainerAndContentSize(CGSize containerSize, CGSize contentSize);
+extern CGFloat RandomFloatBetweenLowAndHigh(CGFloat low, CGFloat high);
+
 

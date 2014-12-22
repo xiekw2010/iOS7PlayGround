@@ -72,6 +72,7 @@
     [self.imageView addGestureRecognizer:tap];
     self.imageView.image = [DXPhoto anyImage];
     
+    
     self.transitioningDelegate = self;
     self.presentTransitation = [DXPresentationExampleTransition new];
 }
