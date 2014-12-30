@@ -355,6 +355,8 @@
 
 @interface EnablePopGNavigationViewController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
 
+@property (nonatomic, assign) BOOL shouldIgnorePushingViewControllers;
+
 @end
 
 @implementation EnablePopGNavigationViewController
@@ -364,6 +366,7 @@
     if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         navigationController.interactivePopGestureRecognizer.enabled = (navigationController.viewControllers.count >= 2);
     }
+    self.shouldIgnorePushingViewControllers = NO;
 }
 
 #pragma mark - UIGestureRecognizerDelegate
@@ -379,7 +382,10 @@
         self.interactivePopGestureRecognizer.enabled = NO;
     }
     
-    [super pushViewController:viewController animated:animated];
+    if (!self.shouldIgnorePushingViewControllers) {
+        [super pushViewController:viewController animated:animated];
+    }
+    self.shouldIgnorePushingViewControllers = YES;
 }
 
 

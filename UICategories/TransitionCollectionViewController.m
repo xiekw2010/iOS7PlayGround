@@ -71,7 +71,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self.collectionView.alwaysBounceVertical = YES;
     [self.collectionView registerClass:[ThumbnailCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60) forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)didReceiveMemoryWarning {
