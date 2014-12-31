@@ -15,6 +15,7 @@
 #import "ContainerExampleViewController.h"
 #import "MotionEffectViewController.h"
 #import "PopoverDisplayViewController.h"
+#import "DXSafeNavigationController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate>
 
@@ -95,7 +96,10 @@
     }else if (indexPath.row == 4) {
         [self.navigationController pushViewController:[MotionEffectViewController new] animated:YES];
     }else if (indexPath.row == 5) {
-        [self.navigationController pushViewController:[PopoverDisplayViewController new] animated:YES];
+        PopoverDisplayViewController *pop = [PopoverDisplayViewController new];
+        UINavigationController *navcon = [[DXSafeNavigationController alloc] initWithRootViewController:pop];
+        [self presentViewController:navcon animated:YES completion:nil];
+        
     }
 }
 

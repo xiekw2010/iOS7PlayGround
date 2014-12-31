@@ -10,7 +10,6 @@
 #import <float.h>
 #import <Accelerate/Accelerate.h>
 
-
 @implementation UIView (ScreenShot)
 
 - (UIImage *)screenShotImageWithBounds:(CGRect)selfBounds
@@ -349,56 +348,6 @@
     limitRange.location = 0;
     limitRange.length = MIN(expectCount, self.count);
     return [self subarrayWithRange:limitRange];
-}
-
-@end
-
-@interface EnablePopGNavigationViewController ()<UINavigationControllerDelegate, UIGestureRecognizerDelegate>
-
-@property (nonatomic, assign) BOOL shouldIgnorePushingViewControllers;
-
-@end
-
-@implementation EnablePopGNavigationViewController
-
-#pragma mark - UINavigationControllerDelegate
-- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        navigationController.interactivePopGestureRecognizer.enabled = (navigationController.viewControllers.count >= 2);
-    }
-    self.shouldIgnorePushingViewControllers = NO;
-}
-
-#pragma mark - UIGestureRecognizerDelegate
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
-{
-    //return  YES;
-    return NO;
-}
-
-
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated  {
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.interactivePopGestureRecognizer.enabled = NO;
-    }
-    
-    if (!self.shouldIgnorePushingViewControllers) {
-        [super pushViewController:viewController animated:animated];
-    }
-    self.shouldIgnorePushingViewControllers = YES;
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
-        [self setNeedsStatusBarAppearanceUpdate];
-    }
-    
-    if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.delegate = self;
-        self.interactivePopGestureRecognizer.delegate = self;
-    }
 }
 
 @end

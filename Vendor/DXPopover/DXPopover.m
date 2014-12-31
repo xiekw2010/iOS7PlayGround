@@ -40,6 +40,13 @@
         self.sideEdge = 10.0;
         self.maskType = DXPopoverMaskTypeBlack;
         self.betweenAtViewAndArrowHeight = 4.0;
+        
+        self.layer.shadowColor = [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:0.9].CGColor;
+        self.layer.shadowOffset = CGSizeMake(0, 3);
+        self.layer.shadowOpacity = 0.5;
+        self.layer.shadowRadius = 2.0;
+//        self.layer.masksToBounds = NO;
+        
     }
     return self;
 }
@@ -113,7 +120,7 @@
     UIColor *maskColor;
     switch (self.maskType) {
         case DXPopoverMaskTypeBlack:
-            maskColor = [UIColor colorWithWhite:0.0 alpha:0.55];
+            maskColor = [UIColor colorWithWhite:0.0 alpha:0.20];
             break;
         case DXPopoverMaskTypeNone:
             maskColor = [UIColor clearColor];
@@ -293,6 +300,7 @@
     }
     [contentColor setFill];
     [arrow fill];
+    
 }
 
 - (void)layoutSubviews

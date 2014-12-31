@@ -11,7 +11,7 @@
 #import "CGPlayView.h"
 #import "DXPhoto.h"
 
-@interface PopoverDisplayViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface PopoverDisplayViewController ()<UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 {
     CGFloat _popoverWidth;
     CGSize _popoverArrowSize;
@@ -35,6 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+    
     UIButton *titleLb = [[UIButton alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(100, 40)}];
     [titleLb setTitle:@"DXPopover" forState:UIControlStateNormal];
     [titleLb addTarget:self action:@selector(titleShowPopover) forControlEvents:UIControlEventTouchUpInside];
@@ -66,8 +68,40 @@
     
     self.popover = [DXPopover new];
     self.popover.sideEdge = 20.0;
+//    self.popover.maskType = DXPopoverMaskTypeNone;
     
     self.configs = @[@"changeWidth", @"arrowSize", @"cornerRadius", @"animationIn", @"animationOut", @"animationSpring"];
+    
+    
+    UIButton *navtest = [[UIButton alloc] initWithFrame:CGRectMake(0, 100, 60, 40)];
+    [navtest setTitle:@"Nav" forState:UIControlStateNormal];
+    [navtest addTarget:self action:@selector(navPush) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:navtest];
+    
+    self.navigationController.delegate = self;
+}
+
+- (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    NSLog(@"son did show");
+}
+
+- (void)navPush
+{
+    PopoverDisplayViewController *pop = [PopoverDisplayViewController new];
+    [self.navigationController pushViewController:pop animated:YES];
+    
+    PopoverDisplayViewController *pop1 = [PopoverDisplayViewController new];
+    [self.navigationController pushViewController:pop1 animated:YES];
+    
+    PopoverDisplayViewController *pop2 = [PopoverDisplayViewController new];
+    [self.navigationController pushViewController:pop2 animated:YES];
+
+}
+
+- (void)back
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)titleShowPopover

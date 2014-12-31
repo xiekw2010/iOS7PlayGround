@@ -74,12 +74,6 @@ layer.position = CGPointMake(layer.position.x+(nowAnchorPoint.x-DX_lastAnchor.x)
 @end
 
 
-/**
- *  If the navigationViewController back button is customlized, the popG is disabled, if manually set the delegate, comes several bugs, here is the solution for it, just use it instead of UINavigationController
- */
-@interface EnablePopGNavigationViewController : UINavigationController
-
-@end
 
 
 extern CGRect CenterFrameWithContainerAndContentSize(CGSize containerSize, CGSize contentSize);
