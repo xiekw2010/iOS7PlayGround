@@ -35,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationController.navigationBarHidden = YES;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
     
     UIButton *titleLb = [[UIButton alloc] initWithFrame:(CGRect){CGPointZero, CGSizeMake(100, 40)}];
@@ -79,6 +80,16 @@
     [self.view addSubview:navtest];
     
     self.navigationController.delegate = self;
+    
+    UIView *v = [[UIView alloc] initWithFrame:CGRectMake(210, 300, 100, 100)];
+    v.backgroundColor = [UIColor redColor];
+    v.bounds = CGRectMake(10, 50, 100, 100);
+    [self.view addSubview:v];
+    
+    
+    UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    v1.backgroundColor = [UIColor greenColor];
+    [v addSubview:v1];
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
@@ -133,6 +144,7 @@
 - (void)showPopover1
 {
     [self updateTableViewFrame];
+
 
     CGPoint startPoint = CGPointMake(CGRectGetMidX(self.downBtn.frame)+ 30, CGRectGetMinY(self.downBtn.frame) - 5);
     [self.popover showAtPoint:startPoint popoverPostion:DXPopoverPositionUp withContentView:self.tableView inView:self.navigationController.view];

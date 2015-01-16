@@ -16,6 +16,7 @@
 #import "MotionEffectViewController.h"
 #import "PopoverDisplayViewController.h"
 #import "DXSafeNavigationController.h"
+#import "TextKitFontViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate>
 
@@ -40,7 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"ContainerViewController", @"Motion Effect", @"PopOver"];
+    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"ContainerViewController", @"Motion Effect", @"PopOver", @"TextKit font"];
     
     NSLog(@"self.navigationViewController is %@ and delegate is %@", self.navigationController, self.navigationController.delegate);
 }
@@ -99,7 +100,9 @@
         PopoverDisplayViewController *pop = [PopoverDisplayViewController new];
         UINavigationController *navcon = [[DXSafeNavigationController alloc] initWithRootViewController:pop];
         [self presentViewController:navcon animated:YES completion:nil];
-        
+    }else {
+        TextKitFontViewController *textVC = [[TextKitFontViewController alloc] initWithNibName:@"TextKitFontViewController" bundle:nil];
+        [self.navigationController pushViewController:textVC animated:YES];
     }
 }
 
