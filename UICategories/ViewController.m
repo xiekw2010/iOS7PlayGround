@@ -17,6 +17,7 @@
 #import "PopoverDisplayViewController.h"
 #import "DXSafeNavigationController.h"
 #import "TextKitFontViewController.h"
+#import "DXPhoto.h"
 
 @interface ViewController ()<UINavigationControllerDelegate>
 
@@ -31,7 +32,10 @@
 {
     [super viewDidAppear:animated];
     self.navigationController.delegate = self;
+
 }
+
+
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {

@@ -10,6 +10,7 @@
 #define UICategories_PrefixHeader_pch
 
 #import "UICategory.h"
+#import <ILSLog/ILSLogger.h>
 
 #define NSLog(format, ...) do {                                                                          \
 fprintf(stderr, "<%s : %d> %s\n",                                           \

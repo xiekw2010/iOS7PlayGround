@@ -10,11 +10,13 @@
 
 @interface DXPhoto : NSObject
 
+
 @property (nonatomic, strong) UIImage *thumbnail;
 @property (nonatomic, strong) UIImage *display;
 
 
 + (NSArray *)photos;
 + (UIImage *)anyImage;
++ (DXPhoto *)onlyPhoto;
 
 @end

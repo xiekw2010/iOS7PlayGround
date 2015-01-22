@@ -20,6 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [[ILSLogger sharedLogger] configureWithLogLevel:ILSLogLevelInfo domainWhiteList:nil bonjourName:LOGGER_TARGET];
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         [DXPhoto photos];
     });

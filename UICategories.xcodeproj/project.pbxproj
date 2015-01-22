@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2767321A71036A00C9EF10 /* ILSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2767311A71036A00C9EF10 /* ILSLog.framework */; };
+		BE2767391A71050300C9EF10 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2767331A71050300C9EF10 /* MobileCoreServices.framework */; };
+		BE27673A1A71050300C9EF10 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2767341A71050300C9EF10 /* SystemConfiguration.framework */; };
+		BE27673B1A71050300C9EF10 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2767351A71050300C9EF10 /* QuartzCore.framework */; };
+		BE27673C1A71050300C9EF10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2767361A71050300C9EF10 /* UIKit.framework */; };
+		BE27673D1A71050300C9EF10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2767371A71050300C9EF10 /* Foundation.framework */; };
+		BE27673E1A71050300C9EF10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2767381A71050300C9EF10 /* CoreGraphics.framework */; };
 		BE3F6E2B1A14BDCB0011327D /* MotionEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F6E2A1A14BDCB0011327D /* MotionEffectViewController.m */; };
 		BE3F6E2E1A15A2150011327D /* PopoverDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F6E2D1A15A2150011327D /* PopoverDisplayViewController.m */; };
 		BE3F6E341A15F85C0011327D /* CGPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE3F6E331A15F85C0011327D /* CGPlayView.m */; };
@@ -58,6 +65,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE2767311A71036A00C9EF10 /* ILSLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILSLog.framework; sourceTree = "<group>"; };
+		BE2767331A71050300C9EF10 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BE2767341A71050300C9EF10 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BE2767351A71050300C9EF10 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BE2767361A71050300C9EF10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BE2767371A71050300C9EF10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BE2767381A71050300C9EF10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BE3F6E291A14BDCB0011327D /* MotionEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MotionEffectViewController.h; sourceTree = "<group>"; };
 		BE3F6E2A1A14BDCB0011327D /* MotionEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MotionEffectViewController.m; sourceTree = "<group>"; };
 		BE3F6E2C1A15A2150011327D /* PopoverDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverDisplayViewController.h; sourceTree = "<group>"; };
@@ -136,7 +150,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEBFE2D81A47C975003D0D62 /* FBPop.framework in Frameworks */,
+				BE27673D1A71050300C9EF10 /* Foundation.framework in Frameworks */,
+				BE27673C1A71050300C9EF10 /* UIKit.framework in Frameworks */,
 				BEB33FE619F756C60016605B /* Accelerate.framework in Frameworks */,
+				BE27673B1A71050300C9EF10 /* QuartzCore.framework in Frameworks */,
+				BE2767321A71036A00C9EF10 /* ILSLog.framework in Frameworks */,
+				BE2767391A71050300C9EF10 /* MobileCoreServices.framework in Frameworks */,
+				BE27673A1A71050300C9EF10 /* SystemConfiguration.framework in Frameworks */,
+				BE27673E1A71050300C9EF10 /* CoreGraphics.framework in Frameworks */,
 				BEBFE2D91A47C975003D0D62 /* FLEX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +175,13 @@
 		BEB33FA319F66B380016605B = {
 			isa = PBXGroup;
 			children = (
+				BE2767331A71050300C9EF10 /* MobileCoreServices.framework */,
+				BE2767341A71050300C9EF10 /* SystemConfiguration.framework */,
+				BE2767351A71050300C9EF10 /* QuartzCore.framework */,
+				BE2767361A71050300C9EF10 /* UIKit.framework */,
+				BE2767371A71050300C9EF10 /* Foundation.framework */,
+				BE2767381A71050300C9EF10 /* CoreGraphics.framework */,
+				BE2767311A71036A00C9EF10 /* ILSLog.framework */,
 				BEBFE2D61A47C975003D0D62 /* FBPop.framework */,
 				BEBFE2D71A47C975003D0D62 /* FLEX.framework */,
 				BEBFE2CC1A47C882003D0D62 /* FastDemoImages */,
@@ -512,7 +540,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"$(inherited)",
+					"LOGGER_TARGET=@\\\"kxie\\\"",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -551,6 +579,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -569,8 +598,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "/Users/xiekaiwei/Workspace/ilslib/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/xiekaiwei/Workspace/ilslib/**",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = ./UICategories/PrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = UICategories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -583,8 +616,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = "/Users/xiekaiwei/Workspace/ilslib/**";
+				FRAMEWORK_SEARCH_PATHS = (
+					"/Users/xiekaiwei/Workspace/ilslib/**",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = ./UICategories/PrefixHeader.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = UICategories/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

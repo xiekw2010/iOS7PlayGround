@@ -32,6 +32,11 @@
     [self.textView usePreferredFontWithScale:0.9];
     [self.button usePreferredFontWithScale:0.9];
     [self.textField usePreferredFontWithScale:0.9];
+    [self.label sizeToFit];
+    [self.textView sizeToFit];
+    [self.button sizeToFit];
+    [self.textField sizeToFit];
+
 }
 
 - (void)didReceiveMemoryWarning {

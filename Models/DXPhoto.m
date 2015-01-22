@@ -13,6 +13,7 @@ static NSString * const InstagramImageDirectory = @"instagramImages";
 
 @implementation DXPhoto
 
+
 + (NSArray *)photos {
     static NSMutableArray *images = nil;
     static dispatch_once_t onceToken;
@@ -44,6 +45,16 @@ static NSString * const InstagramImageDirectory = @"instagramImages";
         NSLog(@"** Generated thumbnails in %g seconds", CFAbsoluteTimeGetCurrent() - startTime);
     });
     return images;
+}
+
++ (DXPhoto *)onlyPhoto
+{
+    static DXPhoto *p = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        p = [DXPhoto new];
+    });
+    return p;
 }
 
 + (UIImage *)anyImage
