@@ -20,8 +20,13 @@ static NSString * const InstagramImageDirectory = @"instagramImages";
     dispatch_once(&onceToken, ^{
         images = [NSMutableArray array];
         NSMutableArray *allImageURLS = [NSMutableArray array];
+        NSArray *texts = @[@"In a storyboard-based application, you will often want jkdlajfl;jk;adjfl;",
+                           @"override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section",
+                           @"let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell",
+                           @"override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject",
+                           @"override func numberOfSectionsInCollectionView"];
         
-        NSArray *imageURLs = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"jpg" subdirectory:InstagramImageDirectory];
+        NSArray *imageURLs = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"jpg" subdirectory:FastImagesDirectory];
         NSArray *imageURLs1 = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"JPG" subdirectory:InstagramImageDirectory];
         NSArray *imageURLs2 = [[NSBundle mainBundle] URLsForResourcesWithExtension:@"PNG" subdirectory:InstagramImageDirectory];
         
@@ -37,7 +42,8 @@ static NSString * const InstagramImageDirectory = @"instagramImages";
                 UIImage *originImage = [UIImage imageWithContentsOfFile:[imageURL path]];
                 DXPhoto *photo = [DXPhoto new];
                 photo.thumbnail = [originImage thumbnailForSize:CGSizeMake(100, 100)];
-                photo.display = [originImage thumbnailForScale:0.5];
+                photo.display = [originImage thumbnailForScale:0.2];
+                photo.photoDes = texts[arc4random()%texts.count];
                 [images addObject:photo];
             }
         }

@@ -21,6 +21,14 @@
 		BE5B4C3719F8FB1A00EAE601 /* DXNavPushPhotoTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5B4C3619F8FB1A00EAE601 /* DXNavPushPhotoTransition.m */; };
 		BE5B4C3F19F917D400EAE601 /* DXNavPopPhotoTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5B4C3E19F917D400EAE601 /* DXNavPopPhotoTransition.m */; };
 		BE6F959719F8BA520068EEB7 /* NavigationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6F959619F8BA520068EEB7 /* NavigationControllerDelegate.m */; };
+		BE71538F1A788CC700A31E59 /* DXWaterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE71538E1A788CC700A31E59 /* DXWaterFlowLayout.swift */; };
+		BE7153911A789AC000A31E59 /* WaterFlowCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7153901A789AC000A31E59 /* WaterFlowCollectionViewController.swift */; };
+		BE7153931A789B3300A31E59 /* WaterFlowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7153921A789B3300A31E59 /* WaterFlowCollectionViewCell.swift */; };
+		BE7E2E0F1A775F3C0082FD90 /* SimpleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E2E0E1A775F3C0082FD90 /* SimpleLayout.swift */; };
+		BE7E2E121A7794310082FD90 /* LayoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E2E101A7794310082FD90 /* LayoutTableViewController.swift */; };
+		BE7E2E131A7794310082FD90 /* LayoutTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7E2E111A7794310082FD90 /* LayoutTableViewController.xib */; };
+		BE7E2E151A779CAA0082FD90 /* LineLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E2E141A779CAA0082FD90 /* LineLayoutController.swift */; };
+		BE7E2E171A779DE40082FD90 /* LineFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7E2E161A779DE40082FD90 /* LineFlowLayout.swift */; };
 		BE932BCB1A119EA00057B298 /* SingeImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932BCA1A119EA00057B298 /* SingeImageViewController.m */; };
 		BE932BCE1A11C4470057B298 /* ContainerExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE932BCD1A11C4470057B298 /* ContainerExampleViewController.m */; };
 		BEB33FB219F66B380016605B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FB119F66B380016605B /* main.m */; };
@@ -29,7 +37,6 @@
 		BEB33FBB19F66B380016605B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEB33FB919F66B380016605B /* Main.storyboard */; };
 		BEB33FBD19F66B380016605B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB33FBC19F66B380016605B /* Images.xcassets */; };
 		BEB33FC019F66B380016605B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB33FBE19F66B380016605B /* LaunchScreen.xib */; };
-		BEB33FCC19F66B380016605B /* UICategoriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FCB19F66B380016605B /* UICategoriesTests.m */; };
 		BEB33FD819F66DBC0016605B /* BlurEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FD619F66DBC0016605B /* BlurEffectViewController.m */; };
 		BEB33FD919F66DBC0016605B /* BlurEffectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEB33FD719F66DBC0016605B /* BlurEffectViewController.xib */; };
 		BEB33FE319F746820016605B /* UICategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BEB33FE219F746820016605B /* UICategory.m */; };
@@ -44,6 +51,9 @@
 		BEBFE2D81A47C975003D0D62 /* FBPop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBFE2D61A47C975003D0D62 /* FBPop.framework */; };
 		BEBFE2D91A47C975003D0D62 /* FLEX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBFE2D71A47C975003D0D62 /* FLEX.framework */; };
 		BEBFE2DD1A47D0CC003D0D62 /* DXPopover.m in Sources */ = {isa = PBXBuildFile; fileRef = BEBFE2DC1A47D0CC003D0D62 /* DXPopover.m */; };
+		BEC6D7D21A79D0E200A56AE6 /* RunTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC6D7D11A79D0E200A56AE6 /* RunTimeViewController.m */; };
+		BEC8F4FE1A763C1000FEC154 /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8F4FD1A763C1000FEC154 /* CustomCollectionViewController.swift */; };
+		BEC8F5071A764ACB00FEC154 /* TreeCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC8F5061A764ACB00FEC154 /* TreeCollectionViewLayout.swift */; };
 		BECCB87219FDEE6700C6948C /* PresentationControllerDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCB87119FDEE6700C6948C /* PresentationControllerDelegate.m */; };
 		BECCB87519FDEF5F00C6948C /* DXPresentationExampleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BECCB87419FDEF5F00C6948C /* DXPresentationExampleTransition.m */; };
 		BECD3CAD1A6910FA0016513C /* TKPreferredFontCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = BECD3CAC1A6910FA0016513C /* TKPreferredFontCategory.m */; };
@@ -53,16 +63,6 @@
 		BEF7A1D11A2BFA2A00CF8A0B /* PathSheetTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = BEF7A1D01A2BFA2A00CF8A0B /* PathSheetTransition.m */; };
 		BEFA382E1A539E340008177F /* DXSafeNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEFA382D1A539E340008177F /* DXSafeNavigationController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BEB33FC619F66B380016605B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BEB33FA419F66B380016605B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BEB33FAB19F66B380016605B;
-			remoteInfo = UICategories;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BE2767311A71036A00C9EF10 /* ILSLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ILSLog.framework; sourceTree = "<group>"; };
@@ -87,6 +87,14 @@
 		BE5B4C3E19F917D400EAE601 /* DXNavPopPhotoTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXNavPopPhotoTransition.m; sourceTree = "<group>"; };
 		BE6F959519F8BA520068EEB7 /* NavigationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationControllerDelegate.h; sourceTree = "<group>"; };
 		BE6F959619F8BA520068EEB7 /* NavigationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationControllerDelegate.m; sourceTree = "<group>"; };
+		BE71538E1A788CC700A31E59 /* DXWaterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DXWaterFlowLayout.swift; sourceTree = "<group>"; };
+		BE7153901A789AC000A31E59 /* WaterFlowCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowCollectionViewController.swift; sourceTree = "<group>"; };
+		BE7153921A789B3300A31E59 /* WaterFlowCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterFlowCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE7E2E0E1A775F3C0082FD90 /* SimpleLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLayout.swift; sourceTree = "<group>"; };
+		BE7E2E101A7794310082FD90 /* LayoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTableViewController.swift; sourceTree = "<group>"; };
+		BE7E2E111A7794310082FD90 /* LayoutTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LayoutTableViewController.xib; sourceTree = "<group>"; };
+		BE7E2E141A779CAA0082FD90 /* LineLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineLayoutController.swift; sourceTree = "<group>"; };
+		BE7E2E161A779DE40082FD90 /* LineFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineFlowLayout.swift; sourceTree = "<group>"; };
 		BE932BC91A119EA00057B298 /* SingeImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingeImageViewController.h; sourceTree = "<group>"; };
 		BE932BCA1A119EA00057B298 /* SingeImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingeImageViewController.m; sourceTree = "<group>"; };
 		BE932BCC1A11C4470057B298 /* ContainerExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerExampleViewController.h; sourceTree = "<group>"; };
@@ -101,9 +109,6 @@
 		BEB33FBA19F66B380016605B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEB33FBC19F66B380016605B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BEB33FBF19F66B380016605B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		BEB33FC519F66B380016605B /* UICategoriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UICategoriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BEB33FCA19F66B380016605B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEB33FCB19F66B380016605B /* UICategoriesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICategoriesTests.m; sourceTree = "<group>"; };
 		BEB33FD519F66DBC0016605B /* BlurEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlurEffectViewController.h; path = ../UICategories/BlurEffectViewController.h; sourceTree = "<group>"; };
 		BEB33FD619F66DBC0016605B /* BlurEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlurEffectViewController.m; path = ../UICategories/BlurEffectViewController.m; sourceTree = "<group>"; };
 		BEB33FD719F66DBC0016605B /* BlurEffectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BlurEffectViewController.xib; path = ../UICategories/BlurEffectViewController.xib; sourceTree = "<group>"; };
@@ -127,6 +132,11 @@
 		BEBFE2D71A47C975003D0D62 /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLEX.framework; path = ../../Workspace/ilslib/FLEX.framework; sourceTree = "<group>"; };
 		BEBFE2DB1A47D0CC003D0D62 /* DXPopover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPopover.h; sourceTree = "<group>"; };
 		BEBFE2DC1A47D0CC003D0D62 /* DXPopover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXPopover.m; sourceTree = "<group>"; };
+		BEC6D7D01A79D0E200A56AE6 /* RunTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunTimeViewController.h; sourceTree = "<group>"; };
+		BEC6D7D11A79D0E200A56AE6 /* RunTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunTimeViewController.m; sourceTree = "<group>"; };
+		BEC8F4FC1A763C0F00FEC154 /* UICategories-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UICategories-Bridging-Header.h"; path = "../ViewControllers/UICategories-Bridging-Header.h"; sourceTree = "<group>"; };
+		BEC8F4FD1A763C1000FEC154 /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
+		BEC8F5061A764ACB00FEC154 /* TreeCollectionViewLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeCollectionViewLayout.swift; path = ../ViewControllers/TreeCollectionViewLayout.swift; sourceTree = "<group>"; };
 		BECCB87019FDEE6700C6948C /* PresentationControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationControllerDelegate.h; sourceTree = "<group>"; };
 		BECCB87119FDEE6700C6948C /* PresentationControllerDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationControllerDelegate.m; sourceTree = "<group>"; };
 		BECCB87319FDEF5F00C6948C /* DXPresentationExampleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXPresentationExampleTransition.h; sourceTree = "<group>"; };
@@ -162,13 +172,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BEB33FC219F66B380016605B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -192,7 +195,6 @@
 				BEB3401719F794710016605B /* ViewControllers */,
 				BEB33FE019F746060016605B /* Vendor */,
 				BEB33FAE19F66B380016605B /* UICategories */,
-				BEB33FC819F66B380016605B /* UICategoriesTests */,
 				BEB33FAD19F66B380016605B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -201,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				BEB33FAC19F66B380016605B /* UICategories.app */,
-				BEB33FC519F66B380016605B /* UICategoriesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +223,7 @@
 		BEB33FAF19F66B380016605B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BEC8F4FC1A763C0F00FEC154 /* UICategories-Bridging-Header.h */,
 				BEB33FE419F751930016605B /* PrefixHeader.pch */,
 				BEB33FB019F66B380016605B /* Info.plist */,
 				BEB33FB119F66B380016605B /* main.m */,
@@ -229,26 +231,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BEB33FC819F66B380016605B /* UICategoriesTests */ = {
-			isa = PBXGroup;
-			children = (
-				BEB33FCB19F66B380016605B /* UICategoriesTests.m */,
-				BEB33FC919F66B380016605B /* Supporting Files */,
-			);
-			path = UICategoriesTests;
-			sourceTree = "<group>";
-		};
-		BEB33FC919F66B380016605B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BEB33FCA19F66B380016605B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		BEB33FE019F746060016605B /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				BE71538E1A788CC700A31E59 /* DXWaterFlowLayout.swift */,
+				BE7E2E161A779DE40082FD90 /* LineFlowLayout.swift */,
+				BEC8F5061A764ACB00FEC154 /* TreeCollectionViewLayout.swift */,
+				BE7E2E0E1A775F3C0082FD90 /* SimpleLayout.swift */,
 				BE4E78A41A5CD8AA00AFC2BD /* UIImage+colorness.h */,
 				BE4E78A51A5CD8AA00AFC2BD /* UIImage+colorness.m */,
 				BEFA382C1A539E340008177F /* DXSafeNavigationController.h */,
@@ -303,6 +292,14 @@
 				BECD3CAE1A6913480016513C /* TextKitFontViewController.h */,
 				BECD3CAF1A6913480016513C /* TextKitFontViewController.m */,
 				BECD3CB01A6913480016513C /* TextKitFontViewController.xib */,
+				BEC8F4FD1A763C1000FEC154 /* CustomCollectionViewController.swift */,
+				BE7E2E101A7794310082FD90 /* LayoutTableViewController.swift */,
+				BE7E2E111A7794310082FD90 /* LayoutTableViewController.xib */,
+				BE7E2E141A779CAA0082FD90 /* LineLayoutController.swift */,
+				BE7153901A789AC000A31E59 /* WaterFlowCollectionViewController.swift */,
+				BE7153921A789B3300A31E59 /* WaterFlowCollectionViewCell.swift */,
+				BEC6D7D01A79D0E200A56AE6 /* RunTimeViewController.h */,
+				BEC6D7D11A79D0E200A56AE6 /* RunTimeViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,24 +360,6 @@
 			productReference = BEB33FAC19F66B380016605B /* UICategories.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BEB33FC419F66B380016605B /* UICategoriesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BEB33FD219F66B380016605B /* Build configuration list for PBXNativeTarget "UICategoriesTests" */;
-			buildPhases = (
-				BEB33FC119F66B380016605B /* Sources */,
-				BEB33FC219F66B380016605B /* Frameworks */,
-				BEB33FC319F66B380016605B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BEB33FC719F66B380016605B /* PBXTargetDependency */,
-			);
-			name = UICategoriesTests;
-			productName = UICategoriesTests;
-			productReference = BEB33FC519F66B380016605B /* UICategoriesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -392,10 +371,6 @@
 				TargetAttributes = {
 					BEB33FAB19F66B380016605B = {
 						CreatedOnToolsVersion = 6.0.1;
-					};
-					BEB33FC419F66B380016605B = {
-						CreatedOnToolsVersion = 6.0.1;
-						TestTargetID = BEB33FAB19F66B380016605B;
 					};
 				};
 			};
@@ -413,7 +388,6 @@
 			projectRoot = "";
 			targets = (
 				BEB33FAB19F66B380016605B /* UICategories */,
-				BEB33FC419F66B380016605B /* UICategoriesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,17 +400,11 @@
 				BECD3CB21A6913480016513C /* TextKitFontViewController.xib in Resources */,
 				BEBFE2CE1A47C882003D0D62 /* FastDemoImages in Resources */,
 				BEBFE2CF1A47C882003D0D62 /* instagramImages in Resources */,
+				BE7E2E131A7794310082FD90 /* LayoutTableViewController.xib in Resources */,
 				BEB33FBB19F66B380016605B /* Main.storyboard in Resources */,
 				BEB33FC019F66B380016605B /* LaunchScreen.xib in Resources */,
 				BEB33FD919F66DBC0016605B /* BlurEffectViewController.xib in Resources */,
 				BEB33FBD19F66B380016605B /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BEB33FC319F66B380016605B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +417,7 @@
 			files = (
 				BEB33FB819F66B380016605B /* ViewController.m in Sources */,
 				BECD3CAD1A6910FA0016513C /* TKPreferredFontCategory.m in Sources */,
+				BE7153931A789B3300A31E59 /* WaterFlowCollectionViewCell.swift in Sources */,
 				BECCB87519FDEF5F00C6948C /* DXPresentationExampleTransition.m in Sources */,
 				BECD3CB11A6913480016513C /* TextKitFontViewController.m in Sources */,
 				BEB33FE319F746820016605B /* UICategory.m in Sources */,
@@ -461,39 +430,32 @@
 				BE3F6E2E1A15A2150011327D /* PopoverDisplayViewController.m in Sources */,
 				BEF7A1D11A2BFA2A00CF8A0B /* PathSheetTransition.m in Sources */,
 				BEB3402619F7A1750016605B /* SimpleNavTransition.m in Sources */,
+				BE71538F1A788CC700A31E59 /* DXWaterFlowLayout.swift in Sources */,
 				BEF7A1CE1A2BF7A800CF8A0B /* PathPresentationViewController.m in Sources */,
 				BEB3402319F79E580016605B /* PhotoDetailViewController.m in Sources */,
 				BEB33FD819F66DBC0016605B /* BlurEffectViewController.m in Sources */,
+				BEC8F5071A764ACB00FEC154 /* TreeCollectionViewLayout.swift in Sources */,
+				BEC8F4FE1A763C1000FEC154 /* CustomCollectionViewController.swift in Sources */,
 				BE6F959719F8BA520068EEB7 /* NavigationControllerDelegate.m in Sources */,
 				BEFA382E1A539E340008177F /* DXSafeNavigationController.m in Sources */,
+				BE7E2E121A7794310082FD90 /* LayoutTableViewController.swift in Sources */,
+				BE7E2E0F1A775F3C0082FD90 /* SimpleLayout.swift in Sources */,
 				BE5B4C3F19F917D400EAE601 /* DXNavPopPhotoTransition.m in Sources */,
 				BEB3401C19F794DF0016605B /* DXPhoto.m in Sources */,
+				BE7E2E171A779DE40082FD90 /* LineFlowLayout.swift in Sources */,
 				BEB33FB219F66B380016605B /* main.m in Sources */,
 				BE932BCB1A119EA00057B298 /* SingeImageViewController.m in Sources */,
 				BE4E78A61A5CD8AA00AFC2BD /* UIImage+colorness.m in Sources */,
 				BE3F6E2B1A14BDCB0011327D /* MotionEffectViewController.m in Sources */,
+				BE7153911A789AC000A31E59 /* WaterFlowCollectionViewController.swift in Sources */,
 				BEB3401319F768240016605B /* TransitionCollectionViewController.m in Sources */,
+				BEC6D7D21A79D0E200A56AE6 /* RunTimeViewController.m in Sources */,
 				BE5B4C3719F8FB1A00EAE601 /* DXNavPushPhotoTransition.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BEB33FC119F66B380016605B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BEB33FCC19F66B380016605B /* UICategoriesTests.m in Sources */,
+				BE7E2E151A779CAA0082FD90 /* LineLayoutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BEB33FC719F66B380016605B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BEB33FAB19F66B380016605B /* UICategories */;
-			targetProxy = BEB33FC619F66B380016605B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BEB33FB919F66B380016605B /* Main.storyboard */ = {
@@ -534,6 +496,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -552,7 +516,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = UICategories;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xiekaiwei/Github/iOS7PlayGround/ViewControllers/UICategories-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -576,6 +542,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -588,7 +556,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = UICategories;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/xiekaiwei/Github/iOS7PlayGround/ViewControllers/UICategories-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -598,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/xiekaiwei/Workspace/ilslib/**",
 					"$(PROJECT_DIR)",
@@ -609,6 +580,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ViewControllers/UICategories-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -616,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"/Users/xiekaiwei/Workspace/ilslib/**",
 					"$(PROJECT_DIR)",
@@ -627,40 +601,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lc++";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		BEB33FD319F66B380016605B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = UICategoriesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UICategories.app/UICategories";
-			};
-			name = Debug;
-		};
-		BEB33FD419F66B380016605B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = UICategoriesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UICategories.app/UICategories";
+				SWIFT_OBJC_BRIDGING_HEADER = "ViewControllers/UICategories-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -681,15 +622,6 @@
 			buildConfigurations = (
 				BEB33FD019F66B380016605B /* Debug */,
 				BEB33FD119F66B380016605B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BEB33FD219F66B380016605B /* Build configuration list for PBXNativeTarget "UICategoriesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BEB33FD319F66B380016605B /* Debug */,
-				BEB33FD419F66B380016605B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

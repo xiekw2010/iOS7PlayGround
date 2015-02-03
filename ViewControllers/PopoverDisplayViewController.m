@@ -90,6 +90,7 @@
     UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     v1.backgroundColor = [UIColor greenColor];
     [v addSubview:v1];
+    
 }
 
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated

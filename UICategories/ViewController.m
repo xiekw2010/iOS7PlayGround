@@ -18,6 +18,8 @@
 #import "DXSafeNavigationController.h"
 #import "TextKitFontViewController.h"
 #import "DXPhoto.h"
+#import "UICategories-Swift.h"
+#import "RunTimeViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate>
 
@@ -36,7 +38,6 @@
 }
 
 
-
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
     return [[SimpleNavTransition alloc] initWithNavigationOperation:operation];;
@@ -45,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"ContainerViewController", @"Motion Effect", @"PopOver", @"TextKit font"];
+    self.funcs = @[@"Blur effects", @"Navigation transition", @"Present transitation", @"ContainerViewController", @"Motion Effect", @"PopOver", @"TextKit font", @"CustomCollectionView", @"RunTime"];
     
     NSLog(@"self.navigationViewController is %@ and delegate is %@", self.navigationController, self.navigationController.delegate);
 }
@@ -104,9 +105,15 @@
         PopoverDisplayViewController *pop = [PopoverDisplayViewController new];
         UINavigationController *navcon = [[DXSafeNavigationController alloc] initWithRootViewController:pop];
         [self presentViewController:navcon animated:YES completion:nil];
-    }else {
+    }else if (indexPath.row == 6) {
         TextKitFontViewController *textVC = [[TextKitFontViewController alloc] initWithNibName:@"TextKitFontViewController" bundle:nil];
         [self.navigationController pushViewController:textVC animated:YES];
+    }else if (indexPath.row == 7) {
+        LayoutTableViewController *cvc = [LayoutTableViewController new];
+        [self.navigationController pushViewController:cvc animated:YES];
+    }else if (indexPath.row == 8) {
+        RunTimeViewController *cvc = [RunTimeViewController new];
+        [self.navigationController pushViewController:cvc animated:YES];
     }
 }
 
